@@ -1,0 +1,4 @@
+# Binarios generados: se compilan en cada PC con el SDK (no se suben al repo)
+lib/*.so
+bin/prueba_gpio
+bin/sayhello
