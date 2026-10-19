@@ -6,10 +6,10 @@ CE1113 Sistemas Empotrados — Instituto Tecnológico de Costa Rica
 
 | Nombre |
 |---|
-| Fabiola Meléndez | 
-| Irene Muñoz | 
-| Jeremy Serracín | 
-| Marco Villatoro | 
+| Fabiola Meléndez 2023205341| 
+| Irene Muñoz 2023205342| 
+| Jeremy Serracín 2023205343| 
+| Marco Villatoro 2023205344| 
 
 ## Contenido
 
@@ -64,12 +64,15 @@ file bin/sayhello
 # bash: ./bin/sayhello: cannot execute binary file: Exec format error
 ```
 
-> **Evidencia:** FALTA — Acá poner la captura de `echo $CC`, `file bin/sayhello` y la ejecución en la PC
+![image](images/1.png)
+
 
 ## Preguntas del tutorial
 ### ¿Por qué no debería verse "Hello World!" en la PC? ¿Qué quiere decir la salida?
 
 Porque `sayhello` se compiló con el compilador cruzado `aarch64-poky-linux-gcc` que es un ejecutable ELF con las instrucciones ARM de 64 bits (AArch64), mientras que la PC tiene un procesador x86_64. Entonces el mensaje `cannot execute binary file: Exec format error` es el error `ENOEXEC` del kernel. Indica que el archivo sí es un ejecutable ELF, pero para una arquitectura que el procesador no puede ejecutar. Lo que muestra es que la compilación cruzada funcionó: el binario se generó en la PC, pero es para la Raspberry Pi, por eso no corrió.
+
+
 
 ### Ejecución en la Raspberry Pi
 
@@ -81,7 +84,7 @@ En lugar de copiar el binario a la microSD con la tarjeta fuera, se copió por S
 # Hello World
 ```
 
-![image](images/1.png)
+![image](images/images.png)
 
 
 ### ¿Cuál es la salida en este caso? ¿Qué quiere decir?
@@ -245,6 +248,7 @@ Blink terminado (OK). Salidas en 0.
 ```
 
 ![image](images/2.png)
+
 
 Si aparece `pinMode (...): Device or resource busy`, otro proceso tiene ese pin (por ejemplo, `logica` si se eligen pines del robot). Hay que usar otros pines o detener el servicio con `systemctl stop servidor logica`.
 
