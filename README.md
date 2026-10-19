@@ -84,7 +84,7 @@ En lugar de copiar el binario a la microSD con la tarjeta fuera, se copió por S
 # Hello World
 ```
 
-![image](images/images.png)
+![image](images/image.png)
 
 
 ### ¿Cuál es la salida en este caso? ¿Qué quiere decir?
