@@ -194,7 +194,7 @@ Sin argumentos usa los valores default. Son pines libres en el robot Roomba-Disc
 **Conexión sugerida (con la Raspberry apagada):**
 
 - **Cada salida:** un LED con su resistencia en serie (220 a 330 Ω), del pin de salida a GND (el ánodo del LED hacia el pin).
-- **Entrada:** un cable del pin 7 a 3.3 V (pin 1) para leer 1; suelto se lee 0 por el pull-down. 
+- **Entrada:** opcional. Sin nada conectado se lee 0 por el pull-down (es lo que se usó en las pruebas); con un cable del pin 7 a 3.3 V (pin 1) se lee 1.
 
 **¡¡¡OJO!!! - Nunca conectar a 5 V:** los GPIO de la Raspberry son de 3.3 V.
 
@@ -236,14 +236,14 @@ La aplicación se enlaza con `-Wl,-rpath,'$ORIGIN/../lib'`, así que busca la bi
 ./bin/prueba_gpio 20 19 4 2.5     # mismos pines, blink a 2.5 Hz
 ```
 
-Salida esperada (entrada conectada a 3.3 V):
+Salida esperada (entrada sin conectar: el pull-down interno la deja en 0; si se conecta el pin 7 a 3.3 V se lee 1):
 
 ```text
 Salida fija: GPIO20 | Blink: GPIO19 a 1.00 Hz por 5 s | Entrada: GPIO4
-t= 0.25 s | GPIO20 (salida) = 1 | GPIO19 (blink) = 0 | GPIO4 (entrada) = 1
-t= 0.50 s | GPIO20 (salida) = 0 | GPIO19 (blink) = 1 | GPIO4 (entrada) = 1
+t= 0.25 s | GPIO20 (salida) = 1 | GPIO19 (blink) = 0 | GPIO4 (entrada) = 0
+t= 0.50 s | GPIO20 (salida) = 0 | GPIO19 (blink) = 1 | GPIO4 (entrada) = 0
 ...
-t= 5.00 s | GPIO20 (salida) = 0 | GPIO19 (blink) = 0 | GPIO4 (entrada) = 1
+t= 5.00 s | GPIO20 (salida) = 0 | GPIO19 (blink) = 0 | GPIO4 (entrada) = 0
 Blink terminado (OK). Salidas en 0.
 ```
 
