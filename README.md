@@ -81,7 +81,8 @@ En lugar de copiar el binario a la microSD con la tarjeta fuera, se copió por S
 # Hello World
 ```
 
-> **Evidencia:** PENDIENTE — poner acá captura de la ejecución en la Rasp
+![image](images/1.png)
+
 
 ### ¿Cuál es la salida en este caso? ¿Qué quiere decir?
 
@@ -243,7 +244,7 @@ t= 5.00 s | GPIO20 (salida) = 0 | GPIO19 (blink) = 0 | GPIO4 (entrada) = 1
 Blink terminado (OK). Salidas en 0.
 ```
 
-> **Evidencia:** FALTA — acá ponemos la salida real en la Raspberry Pi
+![image](images/2.png)
 
 Si aparece `pinMode (...): Device or resource busy`, otro proceso tiene ese pin (por ejemplo, `logica` si se eligen pines del robot). Hay que usar otros pines o detener el servicio con `systemctl stop servidor logica`.
 
